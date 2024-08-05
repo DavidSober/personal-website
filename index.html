@@ -15,7 +15,7 @@
                 align-items: center;
                 background: #f4f4f4;
             }
-    
+
             header {
                 background: #333;
                 color: #fff;
@@ -23,14 +23,14 @@
                 text-align: center;
                 width: 100%;
             }
-    
+
             nav {
                 background: #444;
                 color: #fff;
                 padding: 1em 0;
                 width: 100%;
             }
-    
+
             nav ul {
                 list-style: none;
                 margin: 0;
@@ -38,34 +38,34 @@
                 display: flex;
                 justify-content: center;
             }
-    
+
             nav ul li {
                 margin: 0 1em;
             }
-    
+
             nav ul li a {
                 color: #fff;
                 text-decoration: none;
             }
-    
+
             section {
                 padding: 2em;
                 text-align: center;
                 width: 100%;
                 max-width: 800px;
             }
-    
+
             h2 {
                 color: #333;
             }
-    
+
             .experience, .project {
                 border-bottom: 1px solid #ddd;
                 margin-bottom: 1em;
                 padding-bottom: 1em;
                 text-align: left;
             }
-    
+
             footer {
                 background: #333;
                 color: #fff;
@@ -75,18 +75,125 @@
                 position: relative;
                 bottom: 0;
             }
-    
+
             img {
                 max-width: 100%;
                 height: auto;
                 display: block;
                 margin: 0 auto;
             }
-    
+
             iframe {
                 max-width: 100%;
                 display: block;
                 margin: 0 auto;
+            }
+
+            .contact-container {
+                width: 100%;
+                max-width: 700px;
+                margin: 0 auto;
+                text-align: center;
+                padding: 2em 0;
+            }
+
+            .contact-sub-title {
+                font-size: 1.5em;
+                margin-bottom: 1em;
+            }
+
+            .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+            }
+
+            .carousel iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: none;
+            }
+
+            .carousel iframe.active {
+                display: block;
+            }
+
+            .carousel-buttons {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                transform: translateY(-50%);
+            }
+
+            .carousel-button {
+                background-color: rgba(0, 0, 0, 0.5);
+                border: none;
+                color: white;
+                padding: 10px;
+                cursor: pointer;
+            }
+
+            .project-summary {
+                margin-bottom: 2em;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 1em;
+            }
+
+            .gallery-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1em;
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+            }
+            .gallery-images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1em;
+            }
+
+            .gallery-images img {
+            max-width: 150px;
+            height: auto;
+            object-fit: cover;
+            }
+
+
+            .project-thumbnail {
+                max-width: 200px;
+                height: auto;
+                border: 1px solid #ddd;
+                transition: transform 0.3s ease;
+            }
+
+            .gallery-link:hover .project-thumbnail {
+                transform: scale(1.05);
+            }
+
+            .gallery-link span {
+            display: inline-block;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+            background-color: #333; 
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            }
+
+            .gallery-link:hover span {
+                background-color: #444; 
             }
         </style>
     </head>
@@ -100,6 +207,7 @@
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
     <section id="about">
@@ -113,32 +221,50 @@
         <div class="experience">
             <h3>Launchpad.build, Robotics Software Engineer</h3>
             <p><strong>12/2023 – Present</strong></p>
-            <h4>mPower Solar Wafer Feeder and Testing System for Satellite-Grade Solar Panels</h4>
-            <ul>
-                <li>Architected and engineered the entire software stack for industrial silicon wafer feed and test machines, capable of processing 1,066 wafers per day, saving $100k per year in labor costs.</li>
-                <li>Developed embedded state machines using Python and C++ on Nvidia Jetson Nanos, handling multiple inputs/outputs and Modbus 232 communication.</li>
-                <li>Implemented a RESTful API using Flask, enabling real-time communication between machines and integration with external test equipment.</li>
-                <li>Created a responsive front-end user interface using jQuery, HTML, and CSS for real-time system control and status updates.</li>
-                <li>Designed and implemented the electronic controls circuit, integrating various sensors, motors, and safety features.</li>
-                <li>Engineered critical safety features, including an E-stop system and laser curtain, passing TUV electrical inspection standards.</li>
-                <li>Implemented an efficient barcode scanning system for wafer tracking and identification.</li>
-                <li>Developed a comprehensive logging and diagnostic system using Python's logging module and Tailscale for remote troubleshooting and performance analysis.</li>
-            </ul>
-            <!-- Embed a YouTube video showcasing the project -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             
-            <h4>MI Windows and Doors Automated Window Assembly Robot</h4>
-            <h5>Locks and Latches Distribution System</h5>
-            <ul>
-                <li>Programmed an embedded state machine in C++ on an Arduino Nano to control a complex system of solenoids and sensors, processing over 3,840 locks and latches per day.</li>
-                <li>Optimized system performance to achieve cycle times of less than 5 seconds per lock/latch placement operation.</li>
-            </ul>
-            
-            <h5>Screw Feeders Distribution System</h5>
-            <ul>
-                <li>Engineered an embedded control system using C++ on Arduino Nano to manage multiple screw feeders, pneumatic solenoids, and reed sensors, processing up to 7,680 screws per day.</li>
-                <li>Developed a custom communication protocol between Arduino Nano and Jetson AGX Xavier, featuring asynchronous messaging and real-time state reporting.</li>
-            </ul>
+            <div class="project-summary">
+                <h4>mPower Solar Wafer Feeder and Testing System for Satellite-Grade Solar Panels</h4>
+                <a href="mpower-gallery.html" class="gallery-link">
+                    <span>View Gallery</span>
+                    <div class="gallery-images">
+                        <img src="mPower-preshipped.jpg" alt="mPower Project Thumbnail" class="project-thumbnail">
+                        <img src="mPower controls schematic-1.png" alt="mPower Project Image 2" class="project-thumbnail">
+                        <img src="old side view.jpg" alt="mPower Project Image 3" class="project-thumbnail">
+                        <img src="mPower state machine 2.0.png" alt="mPower Project Image 4" class="project-thumbnail">
+                    </div>
+                </a>
+                <ul>
+                    <li>Architected and engineered the entire software stack for industrial silicon wafer feed and test machines, capable of processing 1,066 wafers per day, saving $100k per year in labor costs.</li>
+                    <li>Developed embedded state machines using Python and C++ on Nvidia Jetson Nanos, handling multiple inputs/outputs and Modbus 232 communication.</li>
+                    <li>Implemented a RESTful API using Flask, enabling real-time communication between machines and integration with external test equipment.</li>
+                    <li>Created a responsive front-end user interface using jQuery, HTML, and CSS for real-time system control and status updates.</li>
+                    <li>Designed and implemented the electronic controls circuit, integrating various sensors, motors, and safety features.</li>
+                    <li>Engineered critical safety features, including an E-stop system and laser curtain, passing TUV electrical inspection standards.</li>
+                    <li>Implemented an efficient barcode scanning system for wafer tracking and identification.</li>
+                    <li>Developed a comprehensive logging and diagnostic system using Python's logging module and Tailscale for remote troubleshooting and performance analysis.</li>
+                </ul>
+                <!-- Embed a YouTube video showcasing the project -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+    
+            <div class="project-summary">
+                <h4>MI Windows and Doors Automated Window Assembly Robot</h4>
+                <a href="mi-windows-gallery.html" class="gallery-link">
+                    <img src="images/mi-windows-thumbnail.jpg" alt="MI Windows Project Thumbnail" class="project-thumbnail">
+                    <span>View Gallery</span>
+                </a>
+                <h5>Locks and Latches Distribution System</h5>
+                <ul>
+                    <li>Programmed an embedded state machine in C++ on an Arduino Nano to control a complex system of solenoids and sensors, processing over 3,840 locks and latches per day.</li>
+                    <li>Optimized system performance to achieve cycle times of less than 5 seconds per lock/latch placement operation.</li>
+                </ul>
+                
+                <h5>Screw Feeders Distribution System</h5>
+                <ul>
+                    <li>Engineered an embedded control system using C++ on Arduino Nano to manage multiple screw feeders, pneumatic solenoids, and reed sensors, processing up to 7,680 screws per day.</li>
+                    <li>Developed a custom communication protocol between Arduino Nano and Jetson AGX Xavier, featuring asynchronous messaging and real-time state reporting.</li>
+                </ul>
+            </div>
         </div>
         <!-- Repeat similar structure for other experiences -->
     </section>
@@ -147,23 +273,43 @@
         <div class="project">
             <h3>Automated Lawn Mower Startup</h3>
             <ul>
-                <li>Developed firmware for an Arduino Mega to integrate Bluetooth control for blades and movement.</li>
-                <li>Engineered a cost-effective automated lawn mower with advanced control systems.</li>
-                <!-- Embed a YouTube video showcasing the project -->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <li>Programmed in C++ to develop firmware for an Arduino Mega, integrating Bluetooth technology with serial communication for control of blades and movement with a smartphone. Total cost was reduced by a factor of 8.</li>
+                <li>Engineered an automated lawn mower controlled via smartphone that does not require an underground perimeter wire, achieving 86% reduction in hardware costs per unit from industry standard of $4000 to $580.</li>
+                <li>Implemented advanced control systems, including an H bridge to activate the linear actuator to engage blade control and a relay for engine start, then Hall effect speed controllers to drive the Hub Motors for seamless movement.</li>
+                <li>Awarded $1000 from UCSD's The Basement incubator, demonstrating the project's potential to secure funding.</li>
             </ul>
+            <div class="carousel">
+                <!-- Embed YouTube videos for the project -->
+                <iframe class="active" src="https://www.youtube.com/embed/iwWALto9cSY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/Wkw30ExGQ9M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/scx2QuhTLmg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="carousel-buttons">
+                    <button class="carousel-button left" onclick="prevSlide()">&#10094;</button>
+                    <button class="carousel-button right" onclick="nextSlide()">&#10095;</button>
+                </div>
+            </div>
         </div>
         <div class="project">
-            <h3>Song Genre Classifier</h3>
+            <h3>Autonomous Car Racing - UCSD</h3>
             <ul>
-                <li>Led a team to test machine learning models for song genre classification.</li>
-                <li>Achieved a significant increase in F1 score through ETL operations and model optimization.</li>
-                <!-- Add a screenshot or chart related to the project -->
-                <img src="images/song_genre_classifier.png" alt="Song Genre Classifier Results">
+                <li>Designed, programmed, and built Computer Vision and Reinforcement Learning trained autonomous scale vehicles under Dr. Silberman at UCSD.</li>
+                <li>Achieved multiple wins at AI scale car races:
+                    <ul>
+                        <li>1st place at 2019 Balboa San Diego wide race</li>
+                        <li>1st place at 2019 UCSD race</li>
+                        <li>6th place at Oakland Statewide race</li>
+                    </ul>
+                </li>
+                <li>Participated in 3 San Diego races and 4 California state races.</li>
+                <li>Leveraged OpenCV (Open Computer Vision) and DonkeyCar (based on Keras) and Nvidia Jetson Nano at Triton AI to drive cutting-edge development and performance.</li>
             </ul>
+            <!-- You can add images or videos of the autonomous cars here if available -->
+            <!-- <img src="images/autonomous_car.jpg" alt="Autonomous Racing Car"> -->
+            <!-- Or add a carousel of images/videos similar to the lawn mower project -->
         </div>
         <!-- Repeat similar structure for other projects -->
     </section>
+
     <section id="skills">
         <h2>Skills</h2>
         <ul>
@@ -174,8 +320,50 @@
             <li>Hardware: Arduino, Jetson Nano</li>
         </ul>
     </section>
+
+    <div style="height: 50px" id="contact"></div>
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <div class="contact-sub-title" >
+        Contact
+        <hr />
+      </div>
+      <div class="container">
+        <script type="text/javascript" src="https://form.jotform.com/jsform/242166616350150"></script>
+      </div>
+    </div>
+
+
     <footer>
         <p>&copy; 2024 David Soberanis</p>
     </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel iframe');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        document.querySelector('.carousel-button.left').addEventListener('click', prevSlide);
+        document.querySelector('.carousel-button.right').addEventListener('click', nextSlide);
+
+        // Initialize the first slide as active
+        showSlide(currentSlide);
+    </script>
 </body>
 </html>
